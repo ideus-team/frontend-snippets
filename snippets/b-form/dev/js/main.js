@@ -1,4 +1,4 @@
 $(function(){
   initFormStyler();
-  validateForms();
+  //validateForms();
 });
