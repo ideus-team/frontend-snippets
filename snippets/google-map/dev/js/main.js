@@ -32,7 +32,7 @@ window.onload = function(){
   
    - zoom: number (default 14); 
    - center: { lat: float number, lng: float number } object; 
-   - scrollwheel: boolean (default true);
+   - scrollwheel: boolean (default false);
    - zoomControl: boolean (default true);
    - mapTypeControl: boolean (default true);
    - scaleControl: boolean (default true);
