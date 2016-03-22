@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../dev/sass/blocks/b-gmap.scss","main.css"],"names":[],"mappings":"AAAA,OACE,YAAY,AACZ,YAAa,CCCd,ADCD,UAAW,YAAa,CCGvB","file":"main.min.css","sourcesContent":[null,".b-map {\r\n  width: 900px;\r\n  height: 500px;\r\n}\r\n\r\n.g-hidden {\r\n  display: none;\r\n}\r\n\r\n/*# sourceMappingURL=main.css.map */\r\n"]}
