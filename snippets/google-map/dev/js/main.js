@@ -19,6 +19,14 @@ window.onload = function(){
 };
 
 /*
+  INIT example
+  can be with options or without them
+    1) var myGoogleMap = new gMap('.js-map');
+    2) var myGoogleMap = new gMap('.js-map', options);
+    3) var myGoogleMap = new gMap('.js-map', {
+         zoom: 10
+       });
+
   OPTIONS
   can be in data attributes ( data-zoom="5" data-lat="35.231534" data-lng="35.231534" )
   
