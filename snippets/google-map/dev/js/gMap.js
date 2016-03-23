@@ -26,17 +26,24 @@ window.gMap = function(selector, options){
   };
   
   ctor.data = function(){
-    return ctor.selector.dataset;
+    var data = ctor.selector.dataset;
+    return data;
   };
   
   ctor.getOption = function(option){
-    return parseInt(this.data()[option]) || false;
+    return parseInt(this.data()[option]);
+  };
+  
+  ctor.getBool = function(option){
+    option = this.data()[option];
+    option = typeof option === 'undefined' ? 'undefined' : (/^true$/i).test(option);
+    return option;
   };
   
   ctor.center = function(){
     var center = new google.maps.LatLng(
-      ctor.getOption('lat') || ctor.defaultLatLng.lat,
-      ctor.getOption('lng') || ctor.defaultLatLng.lng
+      ctor.data().lat || ctor.defaultLatLng.lat,
+      ctor.data().lng || ctor.defaultLatLng.lng
     );
     return center;
   };
@@ -45,16 +52,16 @@ window.gMap = function(selector, options){
   
   // map options  
   ctor.options = ctor.extendOptions({
-    zoom: ctor.getOption('zoom') || 14,
+    zoom: 14,
     center: ctor.center(),
-    scrollwheel: ctor.getOption('scrollwheel') || false,
-    disableDefaultUI: ctor.getOption('disableDefaultUI') || true,
-    zoomControl: ctor.getOption('zoomControl') || true,
-    mapTypeControl: ctor.getOption('mapTypeControl') || true,
-    scaleControl: ctor.getOption('scaleControl') || true,
-    streetViewControl: ctor.getOption('streetViewControl') || true,
-    rotateControl: ctor.getOption('rotateControl') || true,
-    fullscreenControl: ctor.getOption('fullscreenControl') || true,
+    scrollwheel: ctor.getBool('scrollwheel') === 'undefined' ? false : ctor.getBool('scrollwheel'),
+    disableDefaultUI: ctor.getBool('disableDefaultUI') === 'undefined' ? true : ctor.getBool('disableDefaultUI'),
+    zoomControl: ctor.getBool('zoomControl') === 'undefined' ? true : ctor.getBool('zoomControl'),
+    mapTypeControl: ctor.getBool('mapTypeControl') === 'undefined' ? true : ctor.getBool('mapTypeControl'),
+    scaleControl: ctor.getBool('scaleControl') === 'undefined' ? true : ctor.getBool('scaleControl'),
+    streetViewControl: ctor.getBool('streetViewControl') === 'undefined' ? true : ctor.getBool('streetViewControl'),
+    rotateControl: ctor.getBool('rotateControl') === 'undefined' ? true : ctor.getBool('rotateControl'),
+    fullscreenControl: ctor.getBool('fullscreenControl') === 'undefined' ? true : ctor.getBool('fullscreenControl'),
     
     // markers objects
     markers: [],
@@ -140,7 +147,7 @@ window.gMap = function(selector, options){
       for (var i = 0; i < ctor.mapMarkers.length; i++) {
         ctor.mapMarkers[i].setMap(null);
         ctor.mapMarkers.splice(i, 1);
-      }      
+      }
     }
   };
   
