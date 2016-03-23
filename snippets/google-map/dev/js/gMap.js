@@ -52,7 +52,7 @@ window.gMap = function(selector, options){
   
   // map options  
   ctor.options = ctor.extendOptions({
-    zoom: 14,
+    zoom: ctor.getOption('zoom') || 14,
     center: ctor.center(),
     scrollwheel: ctor.getBool('scrollwheel') === 'undefined' ? false : ctor.getBool('scrollwheel'),
     disableDefaultUI: ctor.getBool('disableDefaultUI') === 'undefined' ? true : ctor.getBool('disableDefaultUI'),
