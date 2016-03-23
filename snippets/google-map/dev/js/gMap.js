@@ -30,13 +30,15 @@ window.gMap = function(selector, options){
     return data;
   };
   
-  ctor.getOption = function(option){
-    return parseInt(this.data()[option]);
+  ctor.getOption = function(option, def){
+    option = this.data()[option];
+    option = typeof option === 'undefined' ? def : parseInt(option);
+    return option;
   };
   
-  ctor.getBool = function(option){
+  ctor.getBool = function(option, def){
     option = this.data()[option];
-    option = typeof option === 'undefined' ? 'undefined' : (/^true$/i).test(option);
+    option = typeof option === 'undefined' ? def : (/^true$/i).test(option);
     return option;
   };
   
@@ -52,16 +54,16 @@ window.gMap = function(selector, options){
   
   // map options  
   ctor.options = ctor.extendOptions({
-    zoom: ctor.getOption('zoom') || 14,
+    zoom: ctor.getOption('zoom', 14),
     center: ctor.center(),
-    scrollwheel: ctor.getBool('scrollwheel') === 'undefined' ? false : ctor.getBool('scrollwheel'),
-    disableDefaultUI: ctor.getBool('disableDefaultUI') === 'undefined' ? true : ctor.getBool('disableDefaultUI'),
-    zoomControl: ctor.getBool('zoomControl') === 'undefined' ? true : ctor.getBool('zoomControl'),
-    mapTypeControl: ctor.getBool('mapTypeControl') === 'undefined' ? true : ctor.getBool('mapTypeControl'),
-    scaleControl: ctor.getBool('scaleControl') === 'undefined' ? true : ctor.getBool('scaleControl'),
-    streetViewControl: ctor.getBool('streetViewControl') === 'undefined' ? true : ctor.getBool('streetViewControl'),
-    rotateControl: ctor.getBool('rotateControl') === 'undefined' ? true : ctor.getBool('rotateControl'),
-    fullscreenControl: ctor.getBool('fullscreenControl') === 'undefined' ? true : ctor.getBool('fullscreenControl'),
+    scrollwheel: ctor.getBool('scrollwheel', false),
+    disableDefaultUI: ctor.getBool('disableDefaultUI', true),
+    zoomControl: ctor.getBool('zoomControl', true),
+    mapTypeControl: ctor.getBool('mapTypeControl', true),
+    scaleControl: ctor.getBool('scaleControl', true),
+    streetViewControl: ctor.getBool('streetViewControl', true),
+    rotateControl: ctor.getBool('rotateControl', true),
+    fullscreenControl: ctor.getBool('fullscreenControl', true),
     
     // markers objects
     markers: [],
