@@ -9,22 +9,6 @@ window.gMap = function(selector, options){
   // selector
   ctor.selector = typeof selector === 'object' ? selector : document.querySelector(selector);
   
-  // extend option fn
-  ctor.extendOptions = function(_defaults, _options) {
-    for (var p in _options) {
-      try {
-        if ( _options[p].constructor == Object ) {
-          _defaults[p] = ctor.extendOptions(_defaults[p], _options[p]);
-        } else {
-          _defaults[p] = _options[p];
-        }
-      } catch(e) {
-        _defaults[p] = _options[p];
-      }
-    }
-    return _defaults;
-  };
-  
   ctor.data = function(){
     var data = ctor.selector.dataset;
     return data;
@@ -53,7 +37,7 @@ window.gMap = function(selector, options){
   ctor.mapMarkers = [];
   
   // map options  
-  ctor.options = ctor.extendOptions({
+  ctor.options = $.extend({
     zoom: ctor.getOption('zoom', 14),
     center: ctor.center(),
     scrollwheel: ctor.getBool('scrollwheel', false),
@@ -173,6 +157,7 @@ window.gMap = function(selector, options){
     ctor.map.addListener('click', function(e){ ctor.options.mapClick.call(ctor, e, e.latLng.toJSON(), ctor.map); });
     ctor.map.addListener('mousemove', function(e){ ctor.options.mousemove.call(ctor, e, e.latLng.toJSON(), ctor.map); });
     ctor.map.addListener('mouseover', function(e){ ctor.options.mouseover.call(ctor, e, e.latLng.toJSON(), ctor.map); });
+    ctor.map.addListener('mouseout', function(e){ ctor.options.mouseout.call(ctor, e, e.latLng.toJSON(), ctor.map); });
     ctor.map.addListener('rightclick', function(e){ ctor.options.rightclick.call(ctor, e, e.latLng.toJSON(), ctor.map); });
     ctor.map.addListener('zoom_changed', function(e){ ctor.options.zoomChange.call(ctor, ctor.map, ctor.map.getZoom()); });
   };
