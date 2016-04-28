@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>jQuery Validate</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <form action="" class="js-validate">
+        <fieldset>
+          <legend>Default methods</legend>
+
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="minlengthField">minlength (5) <small>makes the element require a given minimum length.</small></label>
+                <input id="minlengthField" name="minlengthField" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="maxlengthField">maxlength (10) <small>makes the element require a given maximum length.</small></label>
+                <input id="maxlengthField" name="maxlengthField" class="form-control" type="text">
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="rangelengthField">rangelength (5 - 10) <small>makes the element require a given value range.</small></label>
+                <input id="rangelengthField" name="rangelengthField" class="form-control" type="tel">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="minField">min (50) <small>makes the element require a given minimum.</small></label>
+                <input id="minField" name="minField" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="maxField">max (100) <small>makes the element require a given maximum.</small></label>
+                <input id="maxField" name="maxField" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="rangeField">range (50 - 100) <small>makes the element require a given value range.</small></label>
+                <input id="rangeField" name="rangeField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="stepField">step (10) <small>makes the element require a given step.</small></label>
+                <input id="stepField" name="stepField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="numberField">number <small>makes the element require a decimal number (example: -3.14).</small></label>
+                <input id="numberField" name="numberField" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="digitsField">digits <small>makes the element require digits only (example: 3).</small></label>
+                <input id="digitsField" name="digitsField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="equalToField">equalTo <small>requires the element to be the same as another one</small></label>
+                <input id="equalToField" name="equalToField" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="equalTo2Field">&nbsp;</label>
+                <input id="equalTo2Field" name="equalTo2Field" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="remoteField">remote <small>requests a resource (ajax) to check the element for validity.</small></label>
+                <input id="remoteField" name="remoteField" class="form-control" type="text">
+                <small><i>*  The serverside response must be a JSON string that must be "true" for valid elements, and can be "false", undefined, or null for invalid elements, using the default error message. If the serverside response is a string, eg. "That name is already taken, try peter123 instead", this string will be displayed as a custom error message in place of the default.</i></small>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Additional methods</legend>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="patternField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/pattern.js" target="_blank">pattern</a> <small>return true if the field value matches the given format RegExp</small></label>
+                <input id="patternField" name="patternField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="lettersonlyField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/lettersonly.js" target="_blank">lettersonly</a> <small>letters only</small></label>
+                <input id="lettersonlyField" name="lettersonlyField" class="form-control" type="text">
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="letterswithbasicpuncField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/letterswithbasicpunc.js" target="_blank">letterswithbasicpunc</a> <small>letters or punctuation</small></label>
+                <input id="letterswithbasicpuncField" name="letterswithbasicpuncField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="extensionField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/extension.js" target="_blank">extension</a> (jpg, jpeg, png, gif) <small>file extension check. Older "accept" method.</small></label>
+                <input id="extensionField" name="extensionField" class="form-control" type="file">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="require_from_groupField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/require_from_group.js" target="_blank">require_from_group</a> <small>lets you say "at least X inputs that match selector Y must be filled</small></label>
+                <input id="require_from_groupField" name="require_from_groupField" class="form-control group" type="text">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="require_from_groupField2">&nbsp;</label>
+                <input id="require_from_groupField2" name="require_from_groupField2" class="form-control group" type="text">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="require_from_groupField3">&nbsp;</label>
+                <input id="require_from_groupField3" name="require_from_groupField3" class="form-control group" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="skip_or_fill_minimumField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/skip_or_fill_minimum.js" target="_blank">skip_or_fill_minimum</a> <small>Lets you say "either at least X inputs that match selector Y must be filled, OR they must all be skipped (left blank)</small></label>
+                <input id="skip_or_fill_minimumField" name="skip_or_fill_minimumField" class="form-control group2" type="text">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <br>
+                <label for="skip_or_fill_minimumField2">&nbsp;</label>
+                <input id="skip_or_fill_minimumField2" name="skip_or_fill_minimumField2" class="form-control group2" type="text">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <br>
+                <label for="skip_or_fill_minimumField3">&nbsp;</label>
+                <input id="skip_or_fill_minimumField3" name="skip_or_fill_minimumField3" class="form-control group2" type="text">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <br>
+                <label for="skip_or_fill_minimumField4">&nbsp;</label>
+                <input id="skip_or_fill_minimumField4" name="skip_or_fill_minimumField4" class="form-control group2" type="text">
+              </div>
+            </div>
+          </div>
+          <!--
+<div class="row">
+<div class="col-sm-12">
+<div class="form-group">
+<label for="acceptField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/accept.js" target="_blank">Accept</a> (jpg, jpeg, png, gif) <small>accept a value from a file input based on a required mimetype</small></label>
+<input id="acceptField" name="acceptField" class="form-control" type="file">
+</div>
+</div>
+</div>
+-->
+
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="minWordsField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/additional.js" target="_blank">minWords</a> (3) <small>makes the element require a given maximum words count</small></label>
+                <input id="minWordsField" name="minWordsField" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="maxWordsField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/additional.js" target="_blank">maxWords</a> (5) <small>makes the element require a given minimum words count</small></label>
+                <input id="maxWordsField" name="maxWordsField" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="rangeWordsField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/additional.js" target="_blank">rangeWords</a> (3-5) <small>makes the element require a given words count range</small></label>
+                <input id="rangeWordsField" name="rangeWordsField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="alphanumericField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/alphanumeric.js" target="_blank">alphanumeric</a> <small>letters, numbers, and underscores</small></label>
+                <input id="alphanumericField" name="alphanumericField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="bankaccountNLField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/bankaccountNL.js" target="_blank">bankaccountNL</a> <small>Dutch bank account numbers (not 'giro' numbers) have 9 digits and pass the '11 check'. (example: 123456789 or 12 34 56 789)</small></label>
+                <input id="bankaccountNLField" name="bankaccountNLField" class="form-control" type="text">
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <br>
+                <label for="bankorgiroaccountNLField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/bankorgiroaccountNL.js" target="_blank">bankorgiroaccountNL</a> <small>bank or giro account number</small></label>
+                <input id="bankorgiroaccountNLField" name="bankorgiroaccountNLField" class="form-control" type="text">
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <br>
+                <label for="giroaccountNLField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/giroaccountNL.js" target="_blank">giroaccountNL</a> <small> Dutch giro account numbers (not bank numbers) have max 7 digits</small></label>
+                <input id="giroaccountNLField" name="giroaccountNLField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="bicField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/bic.js" target="_blank">bic</a> <small>BIC is the business identifier code (ISO 9362). This BIC check is not a guarantee for authenticity. BIC pattern: BBBBCCLLbbb (8 or 11 characters long; bbb is optional)</small></label>
+                <input id="bicField" name="bicField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="cifESField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/cifES.js" target="_blank">cifES</a> <small>Código de identificación fiscal ( CIF ) is the tax identification code for Spanish legal entitiess</small></label>
+                <input id="cifESField" name="cifESField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="cpfBRField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/cpfBR.js" target="_blank">cpfBR</a> <small> Brazillian CPF number (Cadastrado de Pessoas Físicas) is the equivalent of a Brazilian tax registration number.</small></label>
+                <input id="cpfBRField" name="cpfBRField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="creditcardField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/creditcard.js" target="_blank">creditcard</a> <small>return true if the value is a valid credit card number.</small></label>
+                <input id="creditcardField" name="creditcardField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="creditcardtypesField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/creditcardtypes.js" target="_blank">creditcardtypes</a> (mastercard, visa) <small>Valid Types: mastercard, visa, amex, dinersclub, enroute, discover, jcb, unknown, all (overrides all other settings)</small></label>
+                <input id="creditcardtypesField" name="creditcardtypesField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="currencyField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/currency.js" target="_blank">currency</a> <small>validates currencies with any given symbols (examples: currency: ["£", false] - Use false for soft currency validation; currency: "$,£,¢")</small></label>
+                <input id="currencyField" name="currencyField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="dateITAField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/dateFA.js" target="_blank">dateFA</a>, <a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/dateITA.js" target="_blank">dateITA</a>, <a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/dateNL.js" target="_blank">dateNL</a> <small>valid date, also making this formal check</small></label>
+                <input id="dateITAField" name="dateITAField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="ibanField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/iban.js" target="_blank">iban</a> <small>IBAN is the international bank account number.</small></label>
+                <input id="ibanField" name="ibanField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="integerField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/integer.js" target="_blank">integer</a> <small>a positive or negative non-decimal number</small></label>
+                <input id="integerField" name="integerField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="ipv4Field"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/ipv4.js" target="_blank">ipv4</a> <small>IP v4 address</small></label>
+                <input id="ipv4Field" name="ipv4Field" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="ipv6Field"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/ipv6.js" target="_blank">ipv6</a> <small>IP v6 address</small></label>
+                <input id="ipv6Field" name="ipv6Field" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="mobileUKField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/mobileUK.js" target="_blank">mobileUK</a> <small>UK phone</small></label>
+                <input id="mobileUKField" name="mobileUKField" class="form-control" type="text">
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="mobileNLField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/mobileNL.js" target="_blank">mobileNL</a> <small>NL phone</small></label>
+                <input id="mobileNLField" name="mobileNLField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="nieESField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/nieES.js" target="_blank">nieES</a> <small>the número de identidad de extranjero ( NIE )is a code used to identify the non-nationals in Spain</small></label>
+                <input id="nieESField" name="nieESField" class="form-control" type="text">
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="nifESField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/nifES.js" target="_blank">nifES</a> <small>the Número de Identificación Fiscal ( NIF ) is the way tax identification used in Spain for individuals</small></label>
+                <input id="nifESField" name="nifESField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="notEqualToField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/notEqualTo.js" target="_blank">notEqualTo</a> <small>values must not be the same</small></label>
+                <input id="notEqualToField" name="notEqualToField" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="notEqualToField2">&nbsp;</label>
+                <input id="notEqualToField2" name="notEqualToField2" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="nowhitespaceField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/nowhitespace.js" target="_blank">nowhitespace</a> <small>no white space</small></label>
+                <input id="nowhitespaceField" name="nowhitespaceField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group">
+                <br>
+                <label for="phoneUSField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/phoneUS.js" target="_blank">phoneUS</a> <small>countries phone numbers</small></label>
+                <input id="phoneUSField" name="phoneUSField" class="form-control" type="tel">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <br>
+                <label for="phoneUKField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/phoneUK.js" target="_blank">phoneUK</a></label>
+                <input id="phoneUKField" name="phoneUKField" class="form-control" type="tel">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="phonesUKField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/phonesUK.js" target="_blank">phonesUK</a> <small>matches UK landline + mobile, accepting only 01-3 for landline or 07 for mobile to exclude many premium numbers</small></label>
+                <input id="phonesUKField" name="phonesUKField" class="form-control" type="tel">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <br>
+                <label for="phoneNLField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/phoneNL.js" target="_blank">phoneNL</a></label>
+                <input id="phoneNLField" name="phoneNLField" class="form-control" type="tel">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="postalCodeCAField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/postalCodeCA.js" target="_blank">postalCodeCA</a> <small>Canadian Postal Code</small></label>
+                <input id="postalCodeCAField" name="postalCodeCAField" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="postalcodeBRField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/postalcodeBR.js" target="_blank">postalcodeBR</a></label>
+                <input id="postalcodeBRField" name="postalcodeBRField" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="postalcodeITField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/postalcodeIT.js" target="_blank">postalcodeIT</a></label>
+                <input id="postalcodeITField" name="postalcodeITField" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="postalcodeNLField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/postalcodeNL.js" target="_blank">postalcodeNL</a></label>
+                <input id="postalcodeNLField" name="postalcodeNLField" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="postcodeUKField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/postcodeUK.js" target="_blank">postcodeUK</a></label>
+                <input id="postcodeUKField" name="postcodeUKField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="stateUSField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/statesUS.js" target="_blank">stateUS</a> <small>validates US States and/or Territories</small></label>
+                <input id="stateUSField" name="stateUSField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="strippedminlengthField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/strippedminlength.js" target="_blank">strippedminlength</a> (5) <small>check text length of selected block</small></label>
+                <select name="strippedminlengthField" id="strippedminlengthField" class="form-control">
+                  <option value="#strippedminlengthField2">Block 1</option>
+                  <option value="#strippedminlengthField3">Block 2</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="strippedminlengthField2"><small>Block 1:</small></label>
+                <div id="strippedminlengthField2">12345</div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="strippedminlengthField3"><small>Block 2:</small></label>
+                <div id="strippedminlengthField3">123</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="timeField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/time.js" target="_blank">time</a> <small>time between 00:00 and 23:59</small></label>
+                <input id="timeField" name="timeField" class="form-control" type="text">
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="time12hField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/time12h.js" target="_blank">time12h</a> <small>time in 12-hour am/pm format (example: 10:10 PM)</small></label>
+                <input id="time12hField" name="time12hField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="url2Field"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/url2.js" target="_blank">url2</a> <small>same as url, but TLD is optional</small></label>
+                <input id="url2Field" name="url2Field" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="vinUSField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/vinUS.js" target="_blank">vinUS</a> <small>return true, if the value is a valid vehicle identification number (VIN)</small></label>
+                <input id="vinUSField" name="vinUSField" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="zipcodeUSField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/zipcodeUS.js" target="_blank">zipcodeUS</a> <small>US ZIP Code</small></label>
+                <input id="zipcodeUSField" name="zipcodeUSField" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="ziprangeField"><a href="https://github.com/jzaefferer/jquery-validation/blob/master/src/additional/ziprange.js" target="_blank">ziprange</a> <small>ZIP-code in the range 902xx-xxxx to 905xx-xxxx</small></label>
+                <input id="ziprangeField" name="ziprangeField" class="form-control" type="text">
+                <small><i>*в данный момент в регулярке ошибка, перед фигурными скобками не должно быть символов "\"</i></small>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-default pull-right">Submit</button>
+      </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="src/js/scripts.js"></script>
+  </body>
+</html>
