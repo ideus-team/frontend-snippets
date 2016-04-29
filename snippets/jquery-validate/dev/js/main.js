@@ -47,11 +47,12 @@ function validateForm(){
       remoteField: {
 //        remote: "check-email.php"
         remote: {
-        url: "check-email.php",
-        type: "post",
-        data: {
-          username: function() {
-            return $("#remoteField").val();
+          url: 'check-email.php',
+          type: 'post',
+          data: {
+            username: function() {
+              return $('#remoteField').val();
+            }
           }
         }
       },
@@ -96,7 +97,7 @@ function validateForm(){
         }
       },
       currencyField: {
-        currency: true
+        currency: '$'
       },
       dateITAField: {
         dateITA: true
