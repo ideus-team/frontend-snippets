@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DatePicker</title>
+  <link rel="stylesheet" href="src/css/main.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="src/js/scripts.js"></script>
+  <style>
+    code {
+      display: table;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      padding: 10px;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    $(function(){
+      $('.js-datepicker').datepicker();
+    });
+  </script>
+  
+  <h2>Single</h2>
+  <input type="text" class="js-datepicker">
+  <code>$('.js-datepicker').datepicker();</code>
+  
+  <h2>Inline</h2>
+  <div class="js-datepicker"></div>
+  <code>&lt;div class="js-datepicker"&gt;&lt;/div&gt;
+&lt;script&gt;
+  $('.js-datepicker').datepicker();
+&lt;/script&gt;
+</code>
+  
+  <h2>Year, month, date</h2>
+  <input type="text" class="js-datepicker2">
+<code>$('.js-datepicker').datepicker({
+  changeMonth: true,
+  changeYear: true
+});
+</code>
+  <script>
+    $('.js-datepicker2').datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
+  </script>
+  
+  
+  <h2>Year, month, date, time</h2>
+  <!-- http://xdsoft.net/jqplugins/datetimepicker/ -->
+  <input type="text" class="js-datetimepicker">
+<code>&lt;link rel="stylesheet" href="src/css/jquery.datetimepicker.min.css"&gt;
+&lt;script src="src/js/jquery.datetimepicker.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  $('.js-datetimepicker').datetimepicker();
+&lt;/script&gt;</code>
+  <script>
+    $('.js-datetimepicker').datetimepicker();
+  </script>
+  
+  
+  <h2>Range</h2>
+  <div class="js-datepickerGroup">
+    <input type="text" class="js-datepicker">
+    <input type="text" class="js-datepicker">
+  </div>
+<code>$('.js-datepickerGroup').each(function(indx, elem){
+  var _el = $(elem);
+  var inputs = _el.find('input.js-datepicker');
+  var inputFrom = inputs.eq(0);
+  var inputTo = inputs.eq(1);
+
+  inputFrom.attr('data-name','from');
+  inputTo.attr('data-name','to');
+
+  var dates = $(inputs).datepicker({
+    defaultDate: "+1w",
+    changeMonth: true,
+    numberOfMonths: 1,
+    onSelect: function(selectedDate){
+      var option = this.dataset.name == "from" ? "minDate" : "maxDate",
+          instance = $( this ).data( "datepicker" ),
+          date = $.datepicker.parseDate(
+            instance.settings.dateFormat || $.datepicker._defaults.dateFormat,
+            selectedDate, instance.settings);
+      dates.not(this).datepicker("option", option, date);
+    }
+  });
+});</code>
+  <script>
+    $('.js-datepickerGroup').each(function(indx, elem){
+      var _el = $(elem);
+      var inputs = _el.find('input.js-datepicker');
+      var inputFrom = inputs.eq(0);
+      var inputTo = inputs.eq(1);
+
+      inputFrom.attr('data-name','from');
+      inputTo.attr('data-name','to');
+
+      var dates = $(inputs).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        onSelect: function(selectedDate){
+          var option = this.dataset.name == "from" ? "minDate" : "maxDate",
+              instance = $( this ).data( "datepicker" ),
+              date = $.datepicker.parseDate(
+                instance.settings.dateFormat || $.datepicker._defaults.dateFormat,
+                selectedDate, instance.settings);
+          dates.not(this).datepicker("option", option, date);
+        }
+      });
+    });
+  </script>
+  
+  
+  <h2>Single input range</h2>
+  <input type="text" class="js-datepickerRange">
+<code>(function ($) {
+  $.fn.daterange = function () {
+    // опции
+    var opts = $.extend({
+      'rangeSeparator': '-'
+    }, arguments[0] || {}, {
+      "onClose": function (dateText, inst) {
+        if ($.isFunction(opts.callback)) {
+          opts.callback.apply(this, arguments);
+        }
+      },
+      // выбор даты
+      "onSelect": function (dateText, inst) {
+        var textStart;
+          if (!inst.rangeStart) {
+            inst.inline = true;
+            inst.rangeStart = dateText;
+          } else {
+            inst.inline = false;
+            textStart = inst.rangeStart;
+            if (textStart !== dateText) {
+              $(this).val(textStart + ' ' +
+                opts.rangeSeparator + ' ' + dateText);
+              inst.rangeStart = null;
+            }
+          }
+      }
+    });
+
+    return this.each(function () {
+      var input = $(this);
+      if (input.is('input')) {
+        input.datepicker(opts);
+      }
+    });
+  };
+}(jQuery));
+
+$('.js-datepickerRange').daterange();</code>
+  <script>
+    (function ($) {
+      $.fn.daterange = function () {
+        var opts = $.extend({
+          'rangeSeparator': '-'
+        }, arguments[0] || {}, {
+          "onClose": function (dateText, inst) {
+            if ($.isFunction(opts.callback)) {
+              opts.callback.apply(this, arguments);
+            }
+          },
+          "onSelect": function (dateText, inst) {
+            var textStart;
+              if (!inst.rangeStart) {
+                inst.inline = true;
+                inst.rangeStart = dateText;
+              } else {
+                inst.inline = false;
+                textStart = inst.rangeStart;
+                if (textStart !== dateText) {
+                  $(this).val(textStart + ' ' +
+                    opts.rangeSeparator + ' ' + dateText);
+                  inst.rangeStart = null;
+                }
+              }
+          }
+        });
+
+        return this.each(function () {
+          var input = $(this);
+          if (input.is('input')) {
+            input.datepicker(opts);
+          }
+        });
+      };
+    }(jQuery));
+    
+    $('.js-datepickerRange').daterange();
+  </script>
+  
+  
+  <h2>Exclude dates</h2>
+  <input type="text" class="js-datepickerEx">
+<code>$('.js-datepickerEx').datepicker({
+  beforeShowDay: $.datepicker.noWeekends, //disable weekends
+  minDate: -1, //disable dates early than yestarday
+  maxDate: +20
+});</code>
+  <script>
+    $('.js-datepickerEx').datepicker({
+      beforeShowDay: $.datepicker.noWeekends, //disable weekends
+      minDate: -1, //disable dates early than yestarday
+      maxDate: +20
+    });
+  </script>
+</body>
+</html>
