@@ -1,6 +1,6 @@
 # iDeus frontend snippets
 
-<p>Сниппеты компании iDeus</p>
+<p>Сниппеты компании iDeus с открытым кодом на github и примерами на <a href="http://snippets.ideus.biz">snippets.ideus.biz</a></p>
 
 <h2>Порядок работы и запуска</h2>
 <ol>
