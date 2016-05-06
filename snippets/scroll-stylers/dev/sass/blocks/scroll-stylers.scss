@@ -1,0 +1,38 @@
+.mCSB_draggerRail {
+	.-type_customStyled & {
+		background: pink;
+	}
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	.-type_customStyled & {
+    border-radius: 0;
+		background: #000;
+	}
+}
+
+.mCSB_scrollTools {
+	.-type_customStyled & {
+		.mCSB_buttonUp, .mCSB_buttonDown {
+			text-align: center;
+
+			&:before {
+				display: inline-block;
+				border: 6px solid transparent;
+				content: '';
+			}
+		}
+
+		.mCSB_buttonUp {
+			&:before {
+				border-bottom: 6px solid green;
+			}
+		}
+
+		.mCSB_buttonDown {
+			&:before {
+				border-top: 6px solid green;
+			}
+		} 	
+	}		
+}

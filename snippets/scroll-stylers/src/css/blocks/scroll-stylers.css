@@ -22,37 +22,4 @@
   border-top: 6px solid green;
 }
 
-code {
-  display: table;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  padding: 10px;
-  white-space: pre;
-}
-
-.b-link {
-  display: inline-block;
-  margin: 0 5px 5px 0;
-}
-
-.l-scrollStyledBlock {
-  margin: 10px 0;
-  padding: 0 15px 15px 0;
-  display: inline-block;
-  background: #FFFACD;
-}
-
-.b-scrollStyledBlock {
-  width: 300px;
-  height: 300px;
-  box-sizing: border-box;
-  padding: 15px;
-  overflow: auto;
-  border: 1px solid #000;
-  text-align: justify;
-}
-.b-scrollStyledBlock__inner {
-  width: 500px;
-}
-
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=scroll-stylers.css.map */
