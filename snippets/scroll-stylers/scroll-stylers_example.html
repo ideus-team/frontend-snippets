@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="src/js/jquery.mCustomScrollbar.min.js"></script>
+  <script src="src/js/sly.min.js"></script>
+  <script src="src/js/scripts.js"></script>
+  <link rel="stylesheet" href="src/css/jquery.mCustomScrollbar.min.css" />
+  <link rel="stylesheet" href="src/css/main.css" />
+</head>
+<body>
+  <h2><a href="http://manos.malihu.gr/jquery-custom-content-scroller/" target="_blank">jQuery custom content scroller</a></h2>
+  <h3>Options</h3>
+  <code>
+$('.js-scrollStyledBlock_1').mCustomScrollbar({
+  theme: 'dark',
+  setWidth: false, //false or value in pixels (integer) or percentage (string).
+  setHeight: false,
+  setTop: '0', //set the initial css top property of content, accepts string values (css top position), setTop: '-100px'.
+  setLeft: '0',
+  axis: 'yx', //y, x, yx
+  scrollbarPosition: 'outside',//inside, outside
+  scrollInertia: 0, //set the amount of scrolling momentum as animation duration in milliseconds, integer
+  autoDraggerLength: true, //enable or disable auto-adjusting scrollbar dragger length in relation to scrolling amount, true or false
+  autoHideScrollbar: true, //enable or disable auto-hiding the scrollbar when inactive, true or false
+  autoExpandScrollbar: true, //expand scroll during scrolling
+  alwaysShowScrollbar: 2, //0 – disable (default),  1 – keep dragger rail visible, 2 – keep all scrollbar components (dragger, rail, buttons etc.) visible
+  snapAmount: 5, //make scrolling snap to a multiple of a fixed number of pixels, integer
+  snapOffset: 0,
+  mouseWheel: {  //enable or disable content scrolling via mouse-wheel.
+    enable: true, 
+    scrollAmount: 5, 
+    axis: 'x', 
+    preventDefault: true,
+    deltaFactor: 'auto',
+    normalizeDelta: false,
+    invert: true,
+    disableOver: ['select','option','keygen', 'datalist', 'textarea']
+  },
+  scrollButtons: { //enable or disable scrollbar buttons
+    enable: true,
+    scrollAmount: 50,
+    scrollType: 'stepless', //stepped, stepless
+    tabindex: 1
+  },
+  keyboard: { //enable or disable content scrolling via the keyboard
+    enable: true,
+    scrollAmount: 5,
+    scrollType: 'stepped' //stepless, stepped
+  },
+  contentTouchScroll: 25, //enable or disable content touch-swipe scrolling for touch-enabled devices, false or integer
+  //integer values define the axis-specific minimum amount required for scrolling momentum (default: 25)
+  documentTouchScroll: true, //enable or disable document touch-swipe scrolling for touch-enabled devices, true or false
+  advanced: {
+    autoExpandHorizontalScroll: false,
+    autoScrollOnFocus: false,
+    updateOnContentResize: true,
+    updateOnImageLoad: true,
+    updateOnSelectorChange: true,
+    extraDraggableSelectors: '.b-scrollbar',
+    releaseDraggableSelectors: '.b-scrollbar',
+    autoUpdateTimeout: 20
+  },
+  callbacks: {
+    alwaysTriggerOffsets: false,
+    onTotalScrollOffset: 0,
+    onTotalScrollBackOffset: 0,
+    onCreate:function() {
+      console.log('created');
+    },
+    onInit:function() {},
+    onScrollStart:function() {},
+    onScroll:function() {},
+    whileScrolling:function() {},
+    onTotalScroll:function() {},
+    onTotalScrollBack:function() {},
+    onOverflowY: function(){},
+    onOverflowX: function() {},
+    onOverflowYNone: function() {},
+    onOverflowXNone: function(){},
+    onBeforeUpdate: function(){},
+    onUpdate: function(){},
+    onImageLoad: function(){},
+    onSelectorChange: function(){},
+  },
+  live: 'on', //enable or disable applying scrollbar(s) on all elements matching the current selector
+  liveSelector: ''
+});
+  </code>
+  <div class="l-scrollStyledBlock">
+    <div class="b-scrollStyledBlock js-scrollStyledBlock_1">
+      <div class="b-scrollStyledBlock__inner">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? <br />
+
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?<br />
+
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+      </div>
+    </div>
+  </div>
+
+  <h3>Methods: scrollTo, stop</h3>
+  <code>
+$('.js-scrollBottom').click(function(e){
+  e.preventDefault();
+  console.log('test');
+  $(this).nextAll().mCustomScrollbar('scrollTo','bottom', {
+    scrollInertia: 3000, //scroll-to duration, value in milliseconds
+    scrollEasing: 'linear', //linear, easeOut, easeInOut
+    moveDragger: true, //scroll scrollbar dragger (instead of content)
+    timeout: 500,
+    callbacks: false //true or false
+  });
+  console.log('scrollto');
+});
+
+$('.js-stop').on('click', function(e) {
+  e.preventDefault();
+  var block;
+  block = $(this).nextAll('.js-scrollStyledBlock_1');
+  if(block.hasClass('-type_play')) {
+    block.mCustomScrollbar('stop');
+    block.removeClass('-type_rebuilt');
+  }
+  else {
+    block.mCustomScrollbar('update');
+    block.addClass('-type_play');
+  }
+  console.log('stopped');
+});
+  </code>
+  <div class="l-scrollStyledBlock">
+    <a href="" class="b-scrollStyledBlock__link js-scrollBottom b-link">Scroll to bottom</a>
+    <a href="" class="js-stop b-link">Stop scrollbar</a>
+    <div class="b-scrollStyledBlock js-scrollStyledBlock_1">
+      <div class="b-scrollStyledBlock__inner">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? <br />
+
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?<br />
+
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+      </div>
+    </div>
+  </div>
+
+  <h3>Methods: update, disable, destroy</h3>
+  <code>
+$('.js-update').on('click', function(e) {
+  e.preventDefault();
+  var text, block;
+  text= 'Sed ut perspiciatis unde omni.... <br />';
+  block = $(this).nextAll('.js-scrollStyledBlock_3');
+  block.find('.mCSB_container').append(text);
+  block.mCustomScrollbar('update');
+});
+
+$('.js-enable').on('click', function(e) {
+  e.preventDefault();
+  var block;
+  block = $(this).nextAll('.js-scrollStyledBlock_3');
+  if(block.hasClass('-type_enable')) {
+    block.mCustomScrollbar('disable', true);
+    block.removeClass('-type_enable');
+  }
+  else {
+    block.mCustomScrollbar('update');
+    block.addClass('-type_enable');
+  }
+});
+
+$('.js-destroy').on('click', function(e) {
+  e.preventDefault();
+  var block;
+  block = $(this).nextAll('.js-scrollStyledBlock_3');
+  if(block.hasClass('-type_rebuilt')) {
+    block.mCustomScrollbar('destroy');
+    block.removeClass('-type_rebuilt');
+  }
+  else {
+    initScrollStyler();
+    block.addClass('-type_rebuilt');
+  }
+});
+  </code>
+  <div class="l-scrollStyledBlock">
+    <a href="" class="js-update b-link">Update scrollbar</a>
+    <a href="" class="js-enable b-link">Disable/Enable scrollbar</a>
+    <a href="" class="js-destroy b-link">Destroy/Rebuild scrollbar</a>
+    <div class="b-scrollStyledBlock js-scrollStyledBlock_3 -type_enable -type_rebuilt -type_play">
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? <br />
+    </div>
+  </div>
+
+  <h3>Custom styles</h3>
+  <code>
+.mCSB_draggerRail {
+  .-type_customStyled & {
+    background: pink;
+  }
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  .-type_customStyled & {
+    border-radius: 0;
+    background: #000;
+  }
+}
+
+.mCSB_scrollTools {
+  .-type_customStyled & {
+    .mCSB_buttonUp, .mCSB_buttonDown {
+      text-align: center;
+
+      &:before {
+        display: inline-block;
+        border: 6px solid transparent;
+        content: '';
+      }
+    }
+
+    .mCSB_buttonUp {
+      &:before {
+        border-bottom: 6px solid green;
+      }
+    }
+
+    .mCSB_buttonDown {
+      &:before {
+        border-top: 6px solid green;
+      }
+    }   
+  }   
+} 
+  </code>
+  <div class="l-scrollStyledBlock">
+    <div class="b-scrollStyledBlock -type_customStyled js-scrollStyledBlock_2 ">
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? <br />
+
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?<br />
+
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+    </div>
+  </div>
+  
+</body>
+</html>
