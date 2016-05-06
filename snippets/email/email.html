@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email form</title>
+</head>
+<body>
+  <form action="inc/send_mail.php" class="js-simpleForm">
+    <input type="text" name="name" placeholder="Name"><br><br>
+    <textarea name="msg" placeholder="Description"></textarea><br><br>
+    <button type="submit">Submit</button>
+  </form>
+  
+  <br><br>
+  <hr>
+  <br><br>
+  
+  <form action="inc/send_mail.php" class="js-attachForm">
+    <input type="text" name="name" placeholder="Name"><br><br>
+    <textarea name="msg" placeholder="Description"></textarea><br><br>
+    <input type="file" name="attach"><br><br>
+    <select name="file_save">
+      <option value="0">Send file directly to mail</option>
+      <option value="1">Save file to server before send</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="src/js/scripts.js"></script>
+</body>
+</html>
