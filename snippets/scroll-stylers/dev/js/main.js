@@ -2,7 +2,6 @@
 $(function() {
 	initCustomContentScroller();
 	initScrollStyler();
-	initSlyScroller();
 });
 
 function initCustomContentScroller() {
