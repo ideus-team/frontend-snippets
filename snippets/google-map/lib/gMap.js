@@ -89,6 +89,9 @@ window.gMap = function(selector, options){
     var infowindow = new google.maps.InfoWindow({
       content: ctor.getInfoWindow(marker)
     });
+    if(marker.infoWindow.opened) {
+      infowindow.open(ctor.map, marker);
+    }
     marker.addListener('click', function(){
       infowindow.open(ctor.map, marker);
       ctor.options.markerClick.call(ctor, marker);

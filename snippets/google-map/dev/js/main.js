@@ -61,6 +61,7 @@ window.onload = function(){
           draggable: false || true,
           animation: 1 || 2 || 3 || 4,
           infoWindow: {
+            opened: boolean (default false)
             type: 'html' || 'selector' || 'image' || 'video'
             content: string html || string selector || 'IMAGE_PATH' || 'VIDEO_PATH'
           }
