@@ -82,6 +82,7 @@ window.gMap = function(selector, options){
     }
     ctor.mapMarkers.push(newMarker);
     ctor.setMarker(newMarker);
+    return newMarker;
   };
   
   ctor.createInfoWindow = function(marker){
