@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+  <head>
+  	<meta charset="UTF-8">
+  	<title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="src/css/main.css" />
+  </head>
+  <body>
+    <h2><a href="http://chooowai.github.io/woco-accordion/" target="_blank">Woco accordion</a></h2>
+    <div class="js-wokoAccordion">
+      <h1>Section 1</h1>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+      <h1>Section 2</h1>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+      <h1>Section 3</h1>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+    </div>
+
+  <code>
+  $('.js-wokoAccordion').accordion({
+    firstChildExpand: true, //whether the first section is expanded or not
+    multiExpand: false, //whether expanding mulitple section is allowed or not
+    slideSpeed: 500, //slide animation speed
+    dropDownIcon: '&#9660', //drop down icon
+  });
+  </code>
+
+  <h2><a href="https://github.com/rochestb/Jquery.Kangaroo.Accordion" target="_blank">Kangaroo : jQuery Accordion Plugin</a></h2>
+
+  <div class="kangaroo l-kangaroo js-kangaroo">
+    <ul class="b-kangaroo">
+      <li class="b-kangaroo__item js-kangaroo__item">
+        <a href="#" class="b-kangaroo__title">Section 1</a>
+        <div class="kangaroo-content b-kangaroo__content js-kangaroo__content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </li>
+      <li class="b-kangaroo__item js-kangaroo__item">
+        <a href="#" class="b-kangaroo__title">Section 2</a>
+        <div class="kangaroo-content b-kangaroo__content js-kangaroo__content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </li>
+      <li class="b-kangaroo__item js-kangaroo__item">
+        <a href="#" class="b-kangaroo__title">Section 3</a>
+        <div class="kangaroo-content b-kangaroo__content js-kangaroo__content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <code>
+  $('.js-kangaroo').kangaroo({
+    open: -1,
+    oneOpenedItem: true, // if set to true, only one item can be opened. Once one item is opened, any other that is opened will be closed first
+    speed: 600, // speed of the open / close item animation
+    easing: 'easeOutCubic', // easing of the open / close item animation
+    scrollSpeed: 900,  // speed of the scroll to action animation
+    scrollEasing: 'easeOutCubic', // easing of the scroll to action animation
+    responsiveClass: false // Throttled refresh time
+  });
+  </code>
+
+  <h2><a href="http://www.jqueryscript.net/demo/Customizable-Content-Toggle-Plugin-For-jQuery-Elevator/#" target="_blank">jQuery Elevator Plugin</a></h2>
+  <div class="b-elevator">
+    <a href="#" class="b-elevator__toggleAll js-elevator__toggleAll">Open/close all</a>
+    <div class="b-elevator__item js-elevator__item">
+      <div class="b-elevator__title js-elevator__title">Section 1</div>
+      <div class="b-elevator__content js-elevator__content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+    </div>
+    <div class="b-elevator__item js-elevator__item">
+      <div class="b-elevator__title js-elevator__title">Section 2</div>
+      <div class="b-elevator__content js-elevator__content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+    </div>
+    <div class="b-elevator__item js-elevator__item">
+      <div class="b-elevator__title js-elevator__title">Section 3</div>
+      <div class="b-elevator__content js-elevator__content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+    </div>
+  </div>
+
+  <code>
+  $('.js-elevator__item').tcgElevator({
+    toggleSelector: '.js-elevator__title', //selector for hide/opening the tab content
+    contentSelector: '.js-elevator__content', //selector for tab content
+    speed: 500, 
+    openingSpeed: 500, 
+    closingSpeed: 1000,
+    openClass: '-type_opened',
+    openingClass: '-type_opening',
+    closingClass: '-type_closing'
+  });
+    
+  var closed = true;
+  $('.js-elevator__toggleAll').click(function(e){
+    e.preventDefault();
+    var functionToCall = closed ? 'open' : 'close';
+    closed = !closed;
+    $('.js-elevator__item').tcgElevator(functionToCall);
+  });
+  </code>
+
+  <script src="src/js/scripts.js"></script>
+  </body>
+</html>

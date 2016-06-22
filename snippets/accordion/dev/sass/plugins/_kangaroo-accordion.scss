@@ -1,0 +1,35 @@
+
+.kangaroo li {
+  position: relative;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.kangaroo {
+  width: 100%;
+  min-width: 270px;
+  margin: 0 auto;
+}
+.kangaroo ul li{
+  overflow: hidden;
+}
+
+.kangaroo ul li > a{
+  position: relative;
+  display: block;
+  outline: none;
+  -webkit-transition:  color 0.2s ease-in-out;
+  -moz-transition:  color 0.2s ease-in-out;
+  -o-transition:  color 0.2s ease-in-out;
+  -ms-transition:  color 0.2s ease-in-out;
+  transition:  color 0.2s ease-in-out;
+}
+
+.kangaroo-content {
+  position: absolute;
+}
+
+
+
