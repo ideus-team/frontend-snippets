@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+  <script src="ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="src/js/scripts.js"></script>
+  <link rel="stylesheet" href="src/css/main.css" />
+</head>
+<body>
+
+<p>Mod Rewrite module uses Perl Compatible Regular Expressions (PCRE).</p>
+
+<br>
+
+<p>Next example allows You to keep several sites on the same address.</p>
+<pre>
+&lt;IfModule mod_rewrite.c&gt;
+
+  # Allows to access documents outside the root directory
+  <strong>Options +FollowSymLinks</strong>
+
+  # Enables runtime rewriting engine
+  <strong>RewriteEngine on</strong>
+
+  # Rewrite urls:
+  # RewriteCond - condition for the following RewriteRule
+  # NC - nocase, L - last rule
+  # HTTP_HOST & REQUEST_URI - variables
+  # The following rules check the host name and redirect to the appropriate folder
+
+  <strong>
+  RewriteCond %{HTTP_HOST} hostname\.en$ [NC]
+  RewriteCond %{REQUEST_URI}  !^/en/ [NC]
+  RewriteRule ^(.*)$ /en/$1 [L]
+
+  RewriteCond %{HTTP_HOST} hostname\.de$ [NC]
+  RewriteCond %{REQUEST_URI}  !^/de/ [NC]
+  RewriteRule ^(.*)$ /de/$1 [L]
+
+  RewriteCond %{HTTP_HOST} hostname\.ru$ [NC]
+  RewriteCond %{REQUEST_URI}  !^/ru/ [NC]
+  RewriteRule ^(.*)$ /ru/$1 [L]
+
+  RewriteCond %{HTTP_HOST} hostname\.ua$ [NC]
+  RewriteCond %{REQUEST_URI}  !^/ua/ [NC]
+  RewriteRule ^(.*)$ /ua/$1 [L]
+  </strong>
+
+&lt;/IfModule&gt;
+</pre>
+
+<br>
+
+<p>Another simple and useful samples.</p>
+<pre>
+# Set default base path
+<strong>RewriteBase /path/to/files/</strong>
+
+# Set default page
+<strong>DirectoryIndex about-us.html</strong>
+
+# Redirect
+# RewriteRule Pattern Substitution [Optional Flags]
+# R - redirect code, L - last rule, behaves like a break for cycle.
+# Note that there are absolute and relative references.
+# If You use relative one the base path will be insert automatically.
+# If You use absolute reference without host name the file will be searched from the /.
+<strong>RewriteRule ^page-1\.html$ page-2.html [R=301,L]</strong>
+
+# Rewrite everything else to index.html to allow html5 state links
+<strong>RewriteRule ^ index.html [L]</strong>
+
+# Without R flag the user will see entered url but with content from another page. With R flag the user will see current reference
+# You can repeat some RegExp pattern using parentheses and $ sign with order number of the brackets
+# Next row means that your references got one more depth level. For example your page-10.html can be accessed on pages/page-10.html
+<strong>RewriteRule ^pages/(.*)$ $1</strong>
+# Next row means that your user will see .html extention instead of .php
+<strong>RewriteRule "^(.*)\.html" "$1.php"</strong>
+# Next row means that your page page-10.html can be accessed on page/10
+<strong>RewriteRule ^page/([0-9]+)$ page-$1.html</strong>
+
+# Prevent access to images
+# NC - nocase, F  - forbidden
+<strong>RewriteCond %{HTTP_REFERER} !^$</strong>
+<strong>RewriteCond %{HTTP_REFERER} !^http://(www\.)?example\.com/.*$ [NC]</strong>
+<strong>RewriteRule .+\.(gif|jpg|png)$ - [F]</strong>
+</pre>
+
+<p>See also <a href="http://www.proofsite.com.ua/article-2242.html" target="_blank">examples</a>.</p>
+  
+</body>
+</html>
